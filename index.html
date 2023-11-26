@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Agdasima:wght@700&family=Belanosima&family=Cairo:wght@500;600;700&family=Inter:wght@200;300;500&family=Open+Sans:wght@300;400;600;700&family=Poppins:ital,wght@0,300;0,700;0,800;1,400&family=Roboto:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./Age.css/eage.css" />
+  </head>
+  <body>
+    <div class="contaner">
+      <div class="card">
+        <form>
+          <div>
+            <label for=""> DAY</label>
+            <input id="dayInput" type="text" placeholder="DD" />
+            <span id="dayEror"></span>
+          </div>
+          <div>
+            <label for=""> MONTH</label>
+            <input id=" monthInput" type="text" placeholder="MM" />
+            <span id="monthEror"></span>
+          </div>
+          <div>
+            <label for=""> YEAR</label>
+            <input id="yearInput" type="text" placeholder="YYYY" />
+            <span id="yearEror"></span>
+          </div>
+        </form>
+        <div class="line">
+          <div>
+            <p></p>
+            <button id="button">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="46"
+                height="44"
+                viewBox="0 0 46 44"
+              >
+                <g fill="none" stroke="#FFF" stroke-width="2">
+                  <path
+                    d="M1 22.019C8.333 21.686 23 25.616 23 44M23 44V0M45 22.019C37.667 21.686 23 25.616 23 44"
+                  />
+                </g>
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div class="age">
+          <h1><span id="resultYears"> -- </span> years</h1>
+
+          <h1><span id="resultMonths"> -- </span> months</h1>
+
+          <h1><span id="resultDays"> -- </span> days</h1>
+        </div>
+      </div>
+    </div>
+
+    <script src="./Age_Calculation.js/index.js"></script>
+  </body>
+</html>
