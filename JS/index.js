@@ -12,8 +12,8 @@ const resultDaysElement = document.getElementById("resultDays");
 const labelsErorElement = document.getElementsByTagName("label");
 let result;
 
-function isEmpty(InputElement) {
-  return InputElement.length == 0;
+function isEmpty(value) {
+  return value.length == 0;
 }
 function isValedyear(yearInput) {
   if (isEmpty(yearInput)) {
@@ -21,9 +21,8 @@ function isValedyear(yearInput) {
   }
   if (yearInput > currentDate.getFullYear || yearInput < 0) {
     return { isSuccess: false, error: "Must be in the post" };
-  } else {
-    return { isSuccess: true };
   }
+  return { isSuccess: true };
 }
 
 function isValedmonth(monthInput) {
@@ -32,9 +31,8 @@ function isValedmonth(monthInput) {
   }
   if (monthInput > 31 || monthInput < 0) {
     return { isSuccess: false, error: "Must be a valid month" };
-  } else {
-    return { isSuccess: true };
   }
+  return { isSuccess: true };
 }
 
 function isleapYear(yearInput) {
@@ -65,23 +63,20 @@ function isValedday(dayInput) {
   }
   if (dayInput < 0 || dayInput > deyOfmonth()) {
     return { isSuccess: false, error: "Must be a valid day" };
-  } else {
-    return { isSuccess: true };
   }
+  return { isSuccess: true };
 }
 
-function addArore(dayErorElement, labelsErorElement, InputElement, valid) {
-  dayErorElement.innerText = valid.error;
-  dayErorElement.classList.add("span");
-  InputElement.classList.add("eror_input");
-  labelsErorElement.classList.add("eror_label");
+function addArore(errorElement, labelEror, inputElement, valid) {
+  errorElement.innerText = valid.error;
+  inputElement.classList.add("eror_input");
+  labelEror.classList.add("eror_label");
 }
 
-function removeArore(dayErorElement, labelsErorElement, InputElement) {
-  dayErorElement.innerText = "";
-  dayErorElement.classList.remove("span");
-  InputElement.classList.remove("eror_input");
-  labelsErorElement.classList.remove("eror_label");
+function removeArore(errorElement, labelEror, inputElement) {
+  errorElement.innerText = "";
+  inputElement.classList.remove("eror_input");
+  labelEror.classList.remove("eror_label");
 }
 
 function calcAge(day, month, year) {
@@ -93,7 +88,7 @@ function calcAge(day, month, year) {
   return {
     day: newDate.getDate(),
     month: newDate.getMonth(),
-    year: newDate.getFullYear(),
+    year: newDate.getFullYear() - 1970,
   };
 }
 
@@ -136,7 +131,7 @@ buttonElement.onclick = function (e) {
       yearInputElement.value
     );
 
-    resultYearsElement.innerText = userAge.year - 1970;
+    resultYearsElement.innerText = userAge.year;
     resultMonthsElement.innerText = userAge.month;
     resultDaysElement.innerText = userAge.day;
   }
